@@ -1,4 +1,13 @@
-                <!-- /*!
+<?php
+include("../connection/connect.php");
+error_reporting(0);
+session_start();
+
+mysqli_query($db,"DELETE FROM dishes WHERE d_id = '".$_GET['menu_del']."'");
+header("location:all_menu.php");  
+
+?>
+<!-- /*!
 * Author Name: MH RONY.
 * GigHub Link: https://github.com/dev-mhrony
 * Facebook Link:https://www.facebook.com/dev.mhrony
@@ -7,12 +16,3 @@ for any PHP, Laravel, Python, Dart, Flutter work contact me at developer.mhrony@
 * Visit My Website : developerrony.com
 
 */ -->
-                <?php
-include("../connection/connect.php");
-error_reporting(0);
-session_start();
-
-mysqli_query($db,"DELETE FROM users WHERE u_id = '".$_GET['user_del']."'");
-header("location:all_users.php");  
-
-?>
